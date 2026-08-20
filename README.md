@@ -102,43 +102,6 @@ GPR vs PI-GPR RMSE difference (2.63 kW) is not statistically significant (Diebol
 | Wind Dir (sin/cos) | <0.002 | <0.002 | 0.000 |
 
 Interaction effects are ~4× larger in the residual model, confirming strongly coupled tip-speed ratio dynamics absent from the Betz prior.
-
----
-
-## Repository Structure
-
-```
-pi-gpr-wind-turbine-kelmarsh/
-│
-├── data/
-│   └── kelmarsh_sample_5000.csv      # Preprocessed 5000-point sample
-│
-├── models/
-│   ├── physics_baseline.py           # Betz law + temperature correction
-│   ├── surrogate_models.py           # LR, RF, ANN, GPR implementations
-│   └── pi_gpr.py                     # PI-GPR framework (main contribution)
-│
-├── sensitivity/
-│   └── sobol_analysis.py             # SALib Sobol analysis (GPR + PI-GPR residual)
-│
-├── figures/
-│   ├── fig1_power_curve.png
-│   ├── fig2_parity_all_models.png
-│   ├── fig3_gpr_pigpr_ci_windspeed.png
-│   ├── fig4_gpr_ci_rotorspeed.png
-│   ├── fig5_residual_modelling.png
-│   ├── fig6_sobol_combined.png
-│   ├── fig7_residual_histograms.png
-│   └── fig8_interaction_effects.png
-│
-├── results/
-│   └── metrics.csv                   # Test-set performance metrics
-│
-├── requirements.txt
-├── LICENSE
-└── README.md
-```
-
 ---
 
 ## Reproducibility
@@ -151,19 +114,6 @@ All results are fully reproducible with `seed = 42`.
 git clone https://github.com/hadeedinsha/pi-gpr-wind-turbine-kelmarsh.git
 cd pi-gpr-wind-turbine-kelmarsh
 pip install -r requirements.txt
-```
-
-### Run
-
-```bash
-# Train all models and evaluate
-python models/pi_gpr.py
-
-# Run Sobol sensitivity analysis
-python sensitivity/sobol_analysis.py
-
-# Reproduce all figures
-python figures/generate_figures.py
 ```
 
 ### requirements.txt
