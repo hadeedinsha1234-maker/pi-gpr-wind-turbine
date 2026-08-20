@@ -1,0 +1,6 @@
+Feature,Feature_Label,S1_FirstOrder,ST_TotalOrder,Interaction
+WindSpeed_ms,Wind Speed (m/s),0.5349,0.6182,0.0833
+RotorSpeed_rpm,Rotor Speed (RPM),0.3822,0.4651,0.0829
+Temperature_C,Temperature (°C),0.0003,0.0012,0.0009
+WindDir_sin,Wind Dir (sin),0.0004,0.0001,0.0
+WindDir_cos,Wind Dir (cos),0.0005,0.0,0.0
